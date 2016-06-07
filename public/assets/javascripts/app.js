@@ -16,6 +16,27 @@ function collapseNavbar() {
 $(window).scroll(collapseNavbar);
 $(document).ready(collapseNavbar);
 
+
+// Sidecollapse navbar
+var sideslider = $('[data-toggle=collapse-side]');
+var sel = sideslider.attr('data-target');
+var cont = sideslider.attr('data-container');
+sideslider.click(function(event){
+    $(sel).toggleClass('in');
+    $(cont).toggleClass('in');
+    $(sideslider).toggleClass('toggled');
+});
+$(cont).click(function(event){
+    if($(this).hasClass('in')){
+        $(sel).toggleClass('in');
+        $(cont).toggleClass('in');
+        $(sideslider).toggleClass('toggled');
+        event.stopPropagation();
+    }
+
+});
+
+
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
@@ -33,6 +54,21 @@ $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Google Maps Scripts
 var map = null;

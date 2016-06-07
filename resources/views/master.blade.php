@@ -17,7 +17,10 @@
     <body>
         @include('components.header')
 
-        @yield('content')
+        <section id="main">
+            @yield('content')
+        </section>
+
 
         @include('components.footer')
 

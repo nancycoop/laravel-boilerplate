@@ -8,7 +8,6 @@
                 <span class="visuallyhidden">Accounts</span>
             </button>
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-                <li class="mdl-menu__item"><a href="#">Modifier les coordonées</a></li>
                 <li class="mdl-menu__item"><a href="{{ url('/') }}" target="_blank">Accéder au site</a></li>
             </ul>
         </div>

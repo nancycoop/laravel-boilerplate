@@ -14,6 +14,7 @@
 $ git clone [git-repo-url] my-app
 $ cd my-app
 $ composer install
+$ php artisan migrate
 ```
 
 For compass

@@ -10,7 +10,7 @@
             <form>
 
                 <div class="mdl-textfield mdl-js-textfield">
-                    <textarea class="mdl-textfield__input" rows="2" id="news" ></textarea>
+                    <textarea class="mdl-textfield__input" rows="3" id="news" ></textarea>
                     <label class="mdl-textfield__label" for="news">Aujourd'hui...</label>
                 </div>
 
