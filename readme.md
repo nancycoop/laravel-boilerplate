@@ -10,6 +10,9 @@
 
 ## Installation
 
+Create .env file
+
+
 ```sh
 $ git clone [git-repo-url] my-app
 $ cd my-app
