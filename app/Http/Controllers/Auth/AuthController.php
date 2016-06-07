@@ -48,6 +48,8 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
+        var_dump($data);
+        die();
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
@@ -81,7 +83,7 @@ class AuthController extends Controller
     {
         // Handle authorization
         if(User::all()->count()>=1){
-            return redirect('/login');
+            //return redirect('/login');
         }
 
         return $this->showRegistrationForm();
@@ -97,9 +99,11 @@ class AuthController extends Controller
     {
         // Handle authorization
         if(User::all()->count()>=1){
-            return redirect('/login');
+            //return redirect('/login');
         }
 
+        var_dump($request);
+        die();
         return $this->register($request);
     }
 }
