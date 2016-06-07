@@ -81,7 +81,7 @@ class AuthController extends Controller
     {
         // Handle authorization
         if(User::all()->count()>=1){
-            //return redirect('/login');
+            return redirect('/login');
         }
 
         return $this->showRegistrationForm();
