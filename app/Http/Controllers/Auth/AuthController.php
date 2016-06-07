@@ -72,6 +72,24 @@ class AuthController extends Controller
 
 
 
+
+    /**
+     * Show the application login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getLogin()
+    {
+        // Handle authorization
+        if(User::all()->count()==0){
+            return redirect('/register');
+        }
+        return $this->showLoginForm();
+    }
+
+
+
+
     /**
      * Show the application registration form.
      *
@@ -83,6 +101,7 @@ class AuthController extends Controller
         if(User::all()->count()>=1){
             return redirect('/login');
         }
+
 
         return $this->showRegistrationForm();
     }

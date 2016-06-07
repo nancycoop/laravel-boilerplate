@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'contact@nosari.fr', 'name' => 'nosari.fr'],
 
     /*
     |--------------------------------------------------------------------------
