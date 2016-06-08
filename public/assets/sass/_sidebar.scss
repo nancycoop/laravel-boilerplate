@@ -6,7 +6,7 @@
   transform: $transforms;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: $screen-xs-max) {
 
   .navbar-toggle{
     left: -40px;
@@ -72,4 +72,56 @@
     opacity: .5;
   }
 
+
+  .navbar-brand{
+    text-align: center;
+    height: auto;
+    border-bottom: solid 1px $light;
+    width: 100%;
+  }
+
+  .navbar-nav a{
+    padding: 10px 25px;
+  }
+
+  .navbar-info{
+    display: block;
+    margin-right: -15px;
+    margin-left: -15px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+  }
+
+  .navbar-info h3{
+    padding: 15px 15px;
+    margin: 0;
+    display: block;
+    border-bottom: solid 1px $light;
+    text-align: center;
+  }
+  .navbar-info ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 7.5px;
+  }
+  .navbar-info ul li{
+    padding: 10px 15px;
+    text-align: center;
+  }
+
+  .social-info a{
+    padding-left: 5px;
+    padding-right: 5px;
+    display: inline-block;
+    width: 33.33%;
+    text-align: center;
+    font-size: 30px
+  }
+
+}
+@media all and (min-width: $screen-xs-max) {
+  .navbar-info {
+    display: none;
+  }
 }

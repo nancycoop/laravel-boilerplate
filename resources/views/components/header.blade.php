@@ -6,8 +6,8 @@
                 <i class="fa fa-bars open-nav"></i>
                 <i class="fa fa-times close-nav"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">
-                <i class="fa fa-play-circle"></i>  <span class="light">Start</span> Bootstrap
+            <a class="navbar-brand page-scroll" href="#main">
+                <i class="fa fa-globe"></i> Awesome
             </a>
         </div>
 
@@ -16,7 +16,7 @@
             <ul class="nav navbar-nav">
                 <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                 <li class="hidden">
-                    <a href="#page-top"></a>
+                    <a href="#main">Home</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#about">About</a>
@@ -28,6 +28,28 @@
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
             </ul>
+
+
+
+        </div>
+
+        <div class="navbar-info">
+           <h3>Informations</h3>
+
+            <ul>
+                <li>21, Place Napoléon
+                    93150 LE BLANC-MESNIL</li>
+                <li>01.18.81.61.11</li>
+                <li class="social-info">
+                    <a href="http://facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="http://plus.google.com" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                </li>
+
+                <li>Legal</li>
+            </ul>
+
+
+
         </div>
         <!-- /.navbar-collapse -->
     </div>
