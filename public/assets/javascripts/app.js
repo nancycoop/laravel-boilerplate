@@ -35,6 +35,23 @@ $(cont).click(function(event){
     }
 
 });
+$(window).on("swiperight",function(){
+    if($(cont).hasClass('in')){
+        $(sel).toggleClass('in');
+        $(cont).toggleClass('in');
+        $(sideslider).toggleClass('toggled');
+        event.stopPropagation();
+    }
+});
+$(window).on("swipeleft",function(){
+    if(!($(cont).hasClass('in'))){
+        $(sel).toggleClass('in');
+        $(cont).toggleClass('in');
+        $(sideslider).toggleClass('toggled');
+        event.stopPropagation();
+    }
+});
+
 
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
