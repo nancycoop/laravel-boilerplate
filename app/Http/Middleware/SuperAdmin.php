@@ -2,10 +2,10 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
 use Illuminate\Support\Facades\Auth;
+use Closure;
 
-class Authenticate
+class SuperAdmin
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,23 @@ class Authenticate
      * @param  string|null  $guard
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next)
     {
-        if (Auth::guard($guard)->guest()) {
+
+        if (Auth::check()) {
+
+            if(Auth::user()->name=='admin'){
+                return $next($request);
+            }else{
+                if ($request->ajax() || $request->wantsJson()) {
+                    return response('Unauthorized.', 401);
+                } else {
+                    return redirect()->guest('/login');
+                }
+            }
+
+            
+        }else {
             if ($request->ajax() || $request->wantsJson()) {
                 return response('Unauthorized.', 401);
             } else {
@@ -25,10 +39,6 @@ class Authenticate
             }
         }
 
-        if(Auth::user()->name=='admin'){
-            return redirect('/super-admin'); 
-        }
-
-        return $next($request);
+        
     }
 }

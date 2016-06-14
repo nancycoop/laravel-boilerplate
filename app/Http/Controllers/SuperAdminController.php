@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class SuperAdminController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -14,13 +14,15 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-         //Creating global data
+
+        
+        //Creating global data
         $data = new \stdClass();
         
         //Setting path to assets directories
         $data->{'user'} = new \stdClass();   
-        $data->user->{'type'} = 'admin';
-        view()->share((array)$data);        
+        $data->user->{'type'} = 'super';
+        view()->share((array)$data);     
     }
 
     /**

@@ -16,7 +16,7 @@
 
 
 ## Installation
-### 1. Create env file
+### 1. Create env file and config admin default
 ```
 APP_ENV=local
 APP_KEY=SomeRandomString
@@ -40,12 +40,17 @@ REDIS_PASSWORD=null
 REDIS_PORT=6379
 
 MAIL_DRIVER=mail
+
+
+SUPER_ADMIN_EMAIL=admin@admin.com
 ```
+
 
 ### 2. Install vendor and run migrations
 ```sh
 $ composer install
 $ php artisan migrate
+$ php artisan db:seed
 ```
 
 ## Compass

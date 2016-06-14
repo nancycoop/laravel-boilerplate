@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -37,7 +38,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+        $this->middleware($this->guestMiddleware(), ['except' => ['getLogout', 'logout']]);
     }
 
     /**
@@ -81,7 +82,7 @@ class AuthController extends Controller
     public function getLogin()
     {
         // Handle authorization
-        if(User::all()->count()==0){
+        if(User::where('name','!=','admin')->count()==0){
             return redirect('/register');
         }
         return $this->showLoginForm();
@@ -98,7 +99,7 @@ class AuthController extends Controller
     public function getRegister()
     {
         // Handle authorization
-        if(User::all()->count()>=1){
+        if(User::where('name','!=','admin')->count()>=1){
             return redirect('/login');
         }
 
@@ -115,7 +116,7 @@ class AuthController extends Controller
     public function postRegister(Request $request)
     {
         // Handle authorization
-        if(User::all()->count()>=1){
+        if(User::where('name','!=','admin')->count()>=1){
             return redirect('/login');
         }
 

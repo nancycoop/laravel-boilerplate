@@ -39,6 +39,7 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 // Password reset routes...
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
+
 /*
 *
 *   Administration
@@ -48,5 +49,19 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     
     Route::get('/', 'AdminController@index');
+    
+});
+
+
+
+/*
+*
+*  Super Administration
+*
+*/
+
+Route::group(['prefix' => 'super-admin', 'middleware' => 'auth.admin'], function () {
+    
+    Route::get('/', 'SuperAdminController@index');
     
 });

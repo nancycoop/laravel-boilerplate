@@ -16,9 +16,6 @@ class AppServiceProvider extends ServiceProvider
         //Creating global data
         $data = new \stdClass();
 
-
-
-
         
         //Setting path to assets directories
         $data->{'url'} = new \stdClass();
