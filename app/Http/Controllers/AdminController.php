@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use Illuminate\Http\Request;
+use Request;
+
+use App\Info;
+use App\Daily;
 
 class AdminController extends Controller
 {
@@ -30,6 +33,54 @@ class AdminController extends Controller
      */
     public function index()
     {
-       return view('auth.contents.home');
+        $data = new \stdClass();
+
+        $data->{'daily'} = Daily::orderBy('created_at', 'DESC')->first();
+        
+        return view('auth.contents.home', (array)$data);
     }
+
+
+    /**
+    * Informations
+    */
+    public function getInfo()
+    {
+        $data = new \stdClass();
+
+        $data->{'infos'} = Info::all();
+        //var_dump($info);   
+
+        return view('auth.contents.info',(array)$data);
+    }
+    public function postInfo()
+    {
+       $input = Request::all();
+
+       foreach ($input as $key => $value) {
+           if($key!="_token"){
+                $info=Info::where('name','=', $key)->first();
+                $info->value=$value;
+                $info->save();
+                
+           }   
+
+       }
+
+        return redirect('/admin/info');
+    }
+
+    /**
+    * Daily messages
+    */
+    public function postDaily()
+    {
+        $text=Request::input('daily');
+        $daily=new Daily();
+        $daily->text=$text;
+        $daily->save();
+        return redirect('/admin');
+    }
+
+
 }

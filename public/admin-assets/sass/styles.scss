@@ -203,24 +203,49 @@ html, body {
 }
 
 .mdl-textfield {
-    width: 92%;
+    width: 100%;
 }
-.mdl-textfield ~ button{
+
+.mdl-textfield.daily {
+    width: 96%;
+}
+
+@media all and (min-width:"450px"){
+    .mdl-textfield.cp{
+        width: 30%;
+    }
+
+    .mdl-textfield.city{
+        width: 69%;
+    }
+}
+
+
+
+.spacer.large{
+    height: 50px
+}
+.mdl-textfield ~ button.mdl-button--fab{
     vertical-align: baseline;
     right: 16px;
     top: 55%;
     position: absolute;
 }
+
+button.center{
+    margin: auto;
+    display: block;
+}
 nav .separator{
     border: solid 1px rgba(255,255,255,0.1);
 }
 
-.mdl-button--fab.mdl-button--colored {
-    background: #E64A19;
-    color: #FFFFFF;
+.mdl-button--colored {
+    background: #E64A19 !important;
+    color: #FFFFFF !important;
 }
-.mdl-button--fab.mdl-button--colored:hover{
-    background-color:rgba(230, 74, 25, 0.58);
+.mdl-button--colored:hover{
+    background-color:rgba(230, 74, 25, 0.58) !important;
 }
 
 .card-image.mdl-card {

@@ -49,6 +49,11 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     
     Route::get('/', 'AdminController@index');
+
+    Route::get('/info', 'AdminController@getInfo');
+    Route::post('/info', 'AdminController@postInfo');
+
+    Route::post('/daily', 'AdminController@postDaily');
     
 });
 
