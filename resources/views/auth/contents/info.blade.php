@@ -1,11 +1,8 @@
 @extends('auth.master')
-@section('title', 'Admin')
+@section('title', 'Informations générales')
 @section('content')
 
     <div class="mdl-color--white mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-        <div class="mdl-card__title">
-            <h2 class="mdl-card__title-text">Informations</h2>
-        </div>
         <div class="mdl-card__supporting-text mdl-cell--12-col">
             <form action="{{ url('/admin/info') }}" method="POST">
 
