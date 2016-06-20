@@ -62,12 +62,19 @@ $(function() {
     });
 });
 
-// Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
-  if ($(this).attr('class') != 'dropdown-toggle active' && $(this).attr('class') != 'dropdown-toggle') {
-    $('.navbar-toggle:visible').click();
-  }
-});
+// Handle scroll
+$(document).on("scroll",function(event){
+        var scrollPos = $(document).scrollTop();
+        $('.navbar a.page-scroll').each(function () {
+            var currLink = $(this);
+            var refElement = $(currLink.attr("href"));
+            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                $('.navbar a.page-scroll').removeClass("active");
+                currLink.addClass("active");
+            }
+        });
+    }
+);
 
 
 
