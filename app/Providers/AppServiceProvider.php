@@ -66,7 +66,7 @@ class AppServiceProvider extends ServiceProvider
         $agent->{'mobile'} = $ua->isMobile();
         $agent->{'tablet'} = $ua->isTablet();
         $agent->{'desktop'} = $ua->isDesktop();
-        $data->{'agent'} = $info;
+        $data->{'agent'} = $agent;
 
         
         //Share data with all views
