@@ -29,15 +29,28 @@
                     @endforeach
 
 
-                <!--
+                
                 <div class="spacer large"></div>
 
-                
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" id="facebook" type="text" name="facebook" value="">
-                    <label class="mdl-textfield__label" for="facebook">Facebook</label>               
-                </div>
-                -->
+                @foreach ($socials as $social)
+                        <!-- {{$info->name}} -->
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label social-input {{$social->name}}">
+                            <input
+                                class="mdl-textfield__input"
+                                id="{{$social->name}}"
+                                type="url"
+                                name="social-{{$social->name}}"
+                                value="{{$social->value}}"
+                            >
+                            <label class="mdl-textfield__label" for="{{$social->name}}">
+                                @if($social->iconType=="fa")
+                                    <i class="fa {{$social->icon}}" aria-hidden="true"></i>
+                                @endif
+                            
+                            </label>               
+                        </div>
+                    @endforeach
+               
 
 
 

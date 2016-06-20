@@ -35,6 +35,9 @@
         <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.grey-red.min.css">
         <link rel="stylesheet" href="{{$adminUrl->css}}styles.css" />
 
+
+        <link rel="stylesheet" href="{{$adminUrl->font}}font-awesome/css/font-awesome.min.css">
+
     </head>
     <body>
          <div class="layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
@@ -53,6 +56,10 @@
 
      <!-- Include Javascript -->
      <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+     
+
+
     @yield('extra_js')
     <!--<script src="{{$url->js}}app.js"></script>-->
   </body>

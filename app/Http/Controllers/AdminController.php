@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Request;
 
 use App\Info;
+use App\Social;
 use App\Daily;
 
 class AdminController extends Controller
@@ -49,7 +50,8 @@ class AdminController extends Controller
         $data = new \stdClass();
 
         $data->{'infos'} = Info::all();
-        //var_dump($info);   
+
+        $data->{'socials'} = Social::all();
 
         return view('auth.contents.info',(array)$data);
     }
@@ -59,9 +61,16 @@ class AdminController extends Controller
 
        foreach ($input as $key => $value) {
            if($key!="_token"){
-                $info=Info::where('name','=', $key)->first();
-                $info->value=$value;
-                $info->save();
+                if(preg_match("/^social-.*$/", $key)){
+                    $info=Social::where('name','=', str_replace("social-", "", $key))->first();
+                    $info->value=$value;
+                    $info->save();
+                }else{
+                    $info=Info::where('name','=', $key)->first();
+                    $info->value=$value;
+                    $info->save();
+                }
+                
                 
            }   
 

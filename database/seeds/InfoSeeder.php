@@ -17,11 +17,13 @@ class InfoSeeder extends Seeder
             'type' => 'text',                        
         ]);
 
+        /*
         DB::table('infos')->insert([
             'name' => 'email',
             'label' => 'Adresse E-Mail',
             'type' => 'email',                        
         ]);
+        */
 
         DB::table('infos')->insert([
             'name' => 'address',
@@ -46,6 +48,13 @@ class InfoSeeder extends Seeder
             'label' => 'Téléphone',
             'type' => 'phone',   
             'pattern' => '^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$'                     
+        ]);
+        
+         DB::table('infos')->insert([
+            'name' => 'gps',
+            'label' => 'Coordonées GPS',
+            'type' => 'text',   
+            'pattern' => '^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'                     
         ]);
     }
 }

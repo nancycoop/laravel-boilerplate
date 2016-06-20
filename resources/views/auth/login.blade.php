@@ -46,7 +46,7 @@
                 </button>
             </div>
 
-            <a class="btn btn-link" href="{{ url('/password/reset') }}">Mot de passe oublié</a>
+            <a class="btn btn-link" href="{{ url('/password/email') }}">Mot de passe oublié</a>
         </form>
     </div>
     </div>

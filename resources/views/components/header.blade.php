@@ -37,12 +37,18 @@
            <h3>Informations</h3>
 
             <ul>
-                <li>21, Place Napoléon
-                    93150 LE BLANC-MESNIL</li>
-                <li>01.18.81.61.11</li>
+                <li>{{$info->address}}
+                    <br>
+                    {{$info->cp}} {{$info->city}}</li>
+                <li>{{$info->phone}}</li>
                 <li class="social-info">
-                    <a href="http://facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href="http://plus.google.com" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                    
+                    @foreach ($social as $s)
+                        @if ($s->value!="")
+                            <a href="{{ $s->value}}" target="_blank"><i class="fa {{ $s->icon }}" aria-hidden="true"></i></a>
+                        @endif
+                    @endforeach
+                   
                 </li>
 
                 <li>Legal</li>

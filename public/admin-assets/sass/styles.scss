@@ -220,6 +220,11 @@ html, body {
     }
 }
 
+@media all and (min-width:"768px"){
+    .mdl-textfield.social-input {
+        width: 30%;
+    }
+}
 
 
 .spacer.large{

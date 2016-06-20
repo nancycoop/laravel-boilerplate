@@ -29,6 +29,20 @@
         <script src="{{$url->js}}jquery-2.2.4.min.js"></script>
         <script src="{{$url->js}}jquery.mobile-1.4.5.min.js"></script>
         <script src="{{$url->js}}bootstrap.min.js"></script>
+        <script type="text/javascript">
+            var global = {
+                url : {
+                    img :"{{$url->img}}",
+                },
+                info : {
+                    gps : {
+                        lat : Number("{{$info->gps}}".split(",")[0]),
+                        lng : Number("{{$info->gps}}".split(",")[1]),
+                    }
+                }
+            };
+
+        </script>
         @yield('extra_js')
         <script src="{{$url->js}}app.js"></script>
 
