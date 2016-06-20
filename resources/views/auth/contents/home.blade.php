@@ -1,5 +1,5 @@
 @extends('auth.master')
-@section('title', 'Admin')
+@section('title', 'Accueil')
 @section('content')
 
     <div class="mdl-color--white mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
