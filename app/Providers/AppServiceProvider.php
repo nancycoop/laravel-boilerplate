@@ -39,21 +39,26 @@ class AppServiceProvider extends ServiceProvider
         $data->adminUrl->{'font'} = $adminAssetUrl."fonts/";  
         
         //Global information
-        $infoQuery = Info::all();
         $info=new \stdClass();
-        foreach ($infoQuery as $value) {
-            $info->{''.$value->name} = $value->value;
-        }       
-        $data->{'info'} = $info;  
+        try{
+            $infoQuery = Info::all();
+            foreach ($infoQuery as $value) {
+                $info->{''.$value->name} = $value->value;
+            }       
+            $data->{'info'} = $info;  
+        } catch (\Illuminate\Database\QueryException $e){}
 
 
-         //Social information
-        $socialQuery = Social::all();
+        //Social information
         $social=new \stdClass();
-        foreach ($socialQuery as $value) {
-            $social->{''.$value->name} = $value;
-        }       
-        $data->{'social'} = $social;
+        try{
+            $socialQuery = Social::all();
+            foreach ($socialQuery as $value) {
+                $social->{''.$value->name} = $value;
+            }       
+            $data->{'social'} = $social;
+        } catch (\Illuminate\Database\QueryException $e){}
+        
 
         //User agent
         $ua = new Agent();
