@@ -54,13 +54,34 @@ $(window).on("swipeleft",function(){
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
+        var $anchor = '#'+$(this).attr('href').split('#')[1];
+        console.log($anchor);
+        
+        if($($anchor).length>0){
+            $('html, body').stop().animate({
+                scrollTop: $($anchor).offset().top
+            }, 800, 'easeInOutExpo',function(){
+   
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = $anchor;
+            });
+            event.preventDefault();
+        }
+        
+            
+    });
+    
+});
+$(document).ready(function() { 
+    var $anchor = $('#' + window.location.hash.replace('#', ''));
+    console.log($anchor)
+    if($($anchor).length>0) {
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
+            scrollTop: $($anchor).offset().top
         }, 800, 'easeInOutExpo');
         event.preventDefault();
-    });
-});
+    }
+});;
 
 // Handle scroll
 $(document).on("scroll",function(event){
