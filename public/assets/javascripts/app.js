@@ -88,10 +88,13 @@ $(document).on("scroll",function(event){
         var scrollPos = $(document).scrollTop();
         $('.navbar a.page-scroll').each(function () {
             var currLink = $(this);
-            var refElement = $(currLink.attr("href"));
+            var refElement = $('#'+currLink.attr("href").split('#')[1]);
             if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
                 $('.navbar a.page-scroll').removeClass("active");
                 currLink.addClass("active");
+
+
+                window.location.hash = '#'+$(currLink).attr('href').split('#')[1]
             }
         });
     }
