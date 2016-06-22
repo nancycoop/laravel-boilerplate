@@ -63,7 +63,7 @@ $(function() {
             }, 800, 'easeInOutExpo',function(){
    
                 // Add hash (#) to URL when done scrolling (default click behavior)
-                window.location.hash = $anchor;
+                //window.location.hash = $anchor;
             });
             event.preventDefault();
         }
