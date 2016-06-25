@@ -49,6 +49,7 @@ SUPER_ADMIN_EMAIL=admin@admin.com
 ### 2. Install vendor and run migrations
 ```sh
 $ composer install
+$ php artisan key:generate
 $ php artisan migrate
 $ php artisan db:seed
 ```
