@@ -16,7 +16,7 @@
 
 
 ## Installation
-### 1. Create env file and config admin default
+### 1. Create .env file and config admin default
 ```
 APP_ENV=local
 APP_KEY=SomeRandomString
