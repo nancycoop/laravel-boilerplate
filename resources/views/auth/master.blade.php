@@ -38,7 +38,6 @@
 
         <link rel="stylesheet" href="{{$adminUrl->font}}font-awesome/css/font-awesome.min.css">
 
-
         <!-- Dialog PolyFill -->
         <script src="{{$adminUrl->js}}dialog-polyfill/dialog-polyfill.js"></script>
         <link rel="stylesheet" type="text/css" href="{{$adminUrl->css}}dialog-polyfill/dialog-polyfill.css" />

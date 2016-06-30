@@ -54,20 +54,66 @@ $(window).on("swipeleft",function(){
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
+        var $anchor = '#'+$(this).attr('href').split('#')[1];
+        console.log($anchor);
+        
+        if($($anchor).length>0){
+            $('html, body').stop().animate({
+                scrollTop: $($anchor).offset().top
+            }, 800, 'easeInOutExpo',function(){
+   
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                //window.location.hash = $anchor;
+            });
+            event.preventDefault();
+        }
+        
+            
+    });
+    
+});
+$(document).ready(function() { 
+    var $anchor = $('#' + window.location.hash.replace('#', ''));
+    console.log($anchor)
+    if($($anchor).length>0) {
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
+            scrollTop: $($anchor).offset().top
         }, 800, 'easeInOutExpo');
         event.preventDefault();
-    });
-});
+    }
+});;
 
-// Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
-  if ($(this).attr('class') != 'dropdown-toggle active' && $(this).attr('class') != 'dropdown-toggle') {
-    $('.navbar-toggle:visible').click();
-  }
-});
+// Handle scroll
+$(document).on("scroll",function(event){
+        var scrollPos = $(document).scrollTop();
+        $('.navbar a.page-scroll').each(function () {
+            var currLink = $(this);
+            var refElement = $('#'+currLink.attr("href").split('#')[1]);
+            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                $('.navbar a.page-scroll').removeClass("active");
+                currLink.addClass("active");
+
+
+                window.location.hash = '#'+$(currLink).attr('href').split('#')[1]
+            }
+        });
+    }
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

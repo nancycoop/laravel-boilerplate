@@ -16,7 +16,8 @@
 
 
 ## Installation
-### 1. Create env file and config admin default
+
+### 1. Create .env file and config admin default
 ```
 APP_ENV=local
 APP_KEY=SomeRandomString
@@ -49,6 +50,7 @@ SUPER_ADMIN_EMAIL=admin@admin.com
 ### 2. Install vendor and run migrations
 ```sh
 $ composer install
+$ php artisan key:generate
 $ php artisan migrate
 $ php artisan db:seed
 ```
