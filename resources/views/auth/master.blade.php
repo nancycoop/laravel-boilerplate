@@ -40,7 +40,7 @@
 
         <!-- Dialog PolyFill -->
         <script src="{{$adminUrl->js}}dialog-polyfill/dialog-polyfill.js"></script>
-        <link rel="stylesheet" type="text/css" href="{{$adminUrl->css}}dialog-polyfill/dialog-polyfill.css" />
+        <link rel="stylesheet" type="text/css" href="{{$adminUrl->js}}dialog-polyfill/dialog-polyfill.css" />
 
     </head>
     <body>
