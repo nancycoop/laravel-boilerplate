@@ -32,17 +32,13 @@
                     </div>
 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" id="password-confirm" type="password" name="password_confirm" value="{{ old('password') }}">
-                        <label class="mdl-textfield__label" for="password-confirm">Confimation du mot de passe</label>
-                        @if ($errors->has('password_confirmation'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('password_confirmation') }}</strong>
-                            </span>
-                        @endif
+                        <input class="mdl-textfield__input" id="password_confirmation" type="password" name="password_confirmation">
+                        <label class="mdl-textfield__label" for="password_confirmation">Confimation du mot de passe</label>
+
                     </div>
 
                     <div class="form-input">
-                        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
                             Valider
                         </button>
                     </div>

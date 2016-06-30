@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-        <title>Administration</title>
+        <title>Administration - @yield('title')</title>
 
         <!-- Add to homescreen for Chrome on Android -->
         <meta name="mobile-web-app-capable" content="yes">
@@ -32,8 +32,16 @@
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.cyan-light_blue.min.css">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.grey-red.min.css">
         <link rel="stylesheet" href="{{$adminUrl->css}}styles.css" />
+
+
+        <link rel="stylesheet" href="{{$adminUrl->font}}font-awesome/css/font-awesome.min.css">
+
+
+        <!-- Dialog PolyFill -->
+        <script src="{{$adminUrl->js}}dialog-polyfill/dialog-polyfill.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{$adminUrl->css}}dialog-polyfill/dialog-polyfill.css" />
 
     </head>
     <body>
@@ -53,6 +61,10 @@
 
      <!-- Include Javascript -->
      <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+     
+
+
     @yield('extra_js')
     <!--<script src="{{$url->js}}app.js"></script>-->
   </body>

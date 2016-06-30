@@ -1,8 +1,5 @@
-/*!
- * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
+//JQuery Mobile
+$.mobile.autoInitializePage = false
 
 // jQuery to collapse the navbar on scroll
 function collapseNavbar() {
@@ -15,6 +12,44 @@ function collapseNavbar() {
 
 $(window).scroll(collapseNavbar);
 $(document).ready(collapseNavbar);
+
+
+// Sidecollapse navbar
+var sideslider = $('[data-toggle=collapse-side]');
+var sel = sideslider.attr('data-target');
+var cont = sideslider.attr('data-container');
+sideslider.click(function(event){
+    $(sel).toggleClass('in');
+    $(cont).toggleClass('in');
+    $(sideslider).toggleClass('toggled');
+});
+$(cont).click(function(event){
+    if($(this).hasClass('in')){
+        $(sel).toggleClass('in');
+        $(cont).toggleClass('in');
+        $(sideslider).toggleClass('toggled');
+        event.stopPropagation();
+    }
+
+});
+$(window).on("swiperight",function(){
+    if($(cont).hasClass('in')){
+        $(sel).toggleClass('in');
+        $(cont).toggleClass('in');
+        $(sideslider).toggleClass('toggled');
+        event.stopPropagation();
+    }
+});
+$(window).on("swipeleft",function(){
+    if(!($(cont).hasClass('in'))){
+        $(sel).toggleClass('in');
+        $(cont).toggleClass('in');
+        $(sideslider).toggleClass('toggled');
+        event.stopPropagation();
+    }
+});
+
+
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
@@ -34,12 +69,27 @@ $('.navbar-collapse ul li a').click(function() {
   }
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Google Maps Scripts
 var map = null;
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', init);
 google.maps.event.addDomListener(window, 'resize', function() {
-    map.setCenter(new google.maps.LatLng(40.6700, -73.9400));
+    map.setCenter(new google.maps.LatLng(global.info.gps.lat, global.info.gps.lng));
 });
 
 function init() {
@@ -50,7 +100,7 @@ function init() {
         zoom: 15,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(40.6700, -73.9400), // New York
+        center: new google.maps.LatLng(global.info.gps.lat, global.info.gps.lng), // New York
 
         // Disables the default Google Maps UI components
         scrollwheel: false,
@@ -69,8 +119,8 @@ function init() {
     map = new google.maps.Map(mapElement, mapOptions);
 
     // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
-    var image = 'img/map-marker.png';
-    var myLatLng = new google.maps.LatLng(40.6700, -73.9400);
+    var image = 'assets/img/map-marker.png';
+    var myLatLng = new google.maps.LatLng(global.info.gps.lat, global.info.gps.lng);
     var beachMarker = new google.maps.Marker({
         position: myLatLng,
         map: map,

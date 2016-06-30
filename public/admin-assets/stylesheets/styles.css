@@ -267,34 +267,67 @@ html, body {
 
 /* line 205, ../sass/styles.scss */
 .mdl-textfield {
-  width: 92%;
+  width: 100%;
 }
 
-/* line 208, ../sass/styles.scss */
-.mdl-textfield ~ button {
+/* line 209, ../sass/styles.scss */
+.mdl-textfield.daily {
+  width: 96%;
+}
+
+@media all and (min-width: 450px) {
+  /* line 214, ../sass/styles.scss */
+  .mdl-textfield.cp {
+    width: 30%;
+  }
+
+  /* line 218, ../sass/styles.scss */
+  .mdl-textfield.city {
+    width: 69%;
+  }
+}
+@media all and (min-width: 768px) {
+  /* line 224, ../sass/styles.scss */
+  .mdl-textfield.social-input {
+    width: 30%;
+  }
+}
+/* line 230, ../sass/styles.scss */
+.spacer.large {
+  height: 50px;
+}
+
+/* line 233, ../sass/styles.scss */
+.mdl-textfield ~ button.mdl-button--fab {
   vertical-align: baseline;
   right: 16px;
   top: 55%;
   position: absolute;
 }
 
-/* line 214, ../sass/styles.scss */
+/* line 240, ../sass/styles.scss */
+button.center {
+  margin: auto;
+  display: block;
+}
+
+/* line 244, ../sass/styles.scss */
 nav .separator {
   border: solid 1px rgba(255, 255, 255, 0.1);
 }
 
-/* line 218, ../sass/styles.scss */
-.mdl-button--fab.mdl-button--colored {
-  background: #E64A19;
-  color: #FFFFFF;
+/* line 248, ../sass/styles.scss */
+.mdl-button--colored {
+  background: #E64A19 !important;
+  color: #FFFFFF !important;
 }
 
-/* line 222, ../sass/styles.scss */
-.mdl-button--fab.mdl-button--colored:hover {
-  background-color: rgba(230, 74, 25, 0.58);
+/* line 252, ../sass/styles.scss */
+.mdl-button--colored:hover {
+  background-color: rgba(230, 74, 25, 0.58) !important;
 }
 
-/* line 226, ../sass/styles.scss */
+/* line 256, ../sass/styles.scss */
 .card-image.mdl-card {
   /*background: url('../assets/demos/image_card.jpg') center / cover;*/
   background-position: center !important;
@@ -306,52 +339,52 @@ nav .separator {
   margin-bottom: 4px;
 }
 
-/* line 238, ../sass/styles.scss */
+/* line 268, ../sass/styles.scss */
 .card-image > .mdl-card__actions {
   height: 52px;
   padding: 16px;
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* line 244, ../sass/styles.scss */
+/* line 274, ../sass/styles.scss */
 .card-image.mdl-card:before {
   content: "";
   display: block;
   padding-top: 70%;
 }
 
-/* line 251, ../sass/styles.scss */
+/* line 281, ../sass/styles.scss */
 .card-image__filename {
   color: #fff;
   font-size: 14px;
   font-weight: 500;
 }
 
-/* line 257, ../sass/styles.scss */
+/* line 287, ../sass/styles.scss */
 .mdl-card__actions i {
   color: #EF5350;
   float: right;
 }
 
-/* line 263, ../sass/styles.scss */
+/* line 293, ../sass/styles.scss */
 dialog .mdl-dialog__content {
   padding: 0;
 }
 
-/* line 267, ../sass/styles.scss */
+/* line 297, ../sass/styles.scss */
 dialog .mdl-dialog__actions--full-width {
   padding: 0 8px;
 }
 
 /*Login*/
-/* line 275, ../sass/styles.scss */
+/* line 305, ../sass/styles.scss */
 .login-center {
   margin: auto;
   vertical-align: middle;
   display: inline-block;
 }
 
-/* line 281, ../sass/styles.scss */
+/* line 311, ../sass/styles.scss */
 .login-center:before {
   height: 50%;
   width: 100%;
@@ -363,30 +396,30 @@ dialog .mdl-dialog__actions--full-width {
   z-index: 0;
 }
 
-/* line 292, ../sass/styles.scss */
+/* line 322, ../sass/styles.scss */
 .full-height {
   height: 100%;
   line-height: 100vh;
   position: absolute;
 }
 
-/* line 297, ../sass/styles.scss */
+/* line 327, ../sass/styles.scss */
 .full-width {
   width: 100%;
   text-align: center;
 }
 
-/* line 302, ../sass/styles.scss */
+/* line 332, ../sass/styles.scss */
 .mdl-switch {
   width: auto;
 }
 
-/* line 305, ../sass/styles.scss */
+/* line 335, ../sass/styles.scss */
 .mdl-switch__label {
   margin-right: 24px;
 }
 
-/* line 309, ../sass/styles.scss */
+/* line 339, ../sass/styles.scss */
 .form-input {
   margin-top: 15px;
 }

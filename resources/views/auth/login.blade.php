@@ -41,12 +41,12 @@
 
             
             <div class="form-input">
-                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
                     Connexion
                 </button>
             </div>
 
-            <a class="btn btn-link" href="{{ url('/password/reset') }}">Mot de passe oublié</a>
+            <a class="btn btn-link" href="{{ url('/password/email') }}">Mot de passe oublié</a>
         </form>
     </div>
     </div>

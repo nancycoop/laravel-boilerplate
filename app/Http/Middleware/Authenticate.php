@@ -21,8 +21,12 @@ class Authenticate
             if ($request->ajax() || $request->wantsJson()) {
                 return response('Unauthorized.', 401);
             } else {
-                return redirect()->guest('login');
+                return redirect()->guest('/login');
             }
+        }
+
+        if(Auth::user()->name=='admin'){
+            return redirect('/super-admin'); 
         }
 
         return $next($request);

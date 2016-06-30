@@ -1,14 +1,19 @@
 <div class="drawer mdl-layout__drawer mdl-color--grey-900 mdl-color-text--blue-grey-50">
     <header class="drawer-header">
         <div class="avatar-dropdown">
-            <span>Administrateur</span>
+            <span>
+                @if($user->type=='super')
+                    Super 
+                @endif
+                Administrateur
+             </span>
             <div class="mdl-layout-spacer"></div>
             <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
                 <i class="material-icons" role="presentation">arrow_drop_down</i>
                 <span class="visuallyhidden">Accounts</span>
             </button>
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-                <li class="mdl-menu__item"><a href="#">Modifier les coordonées</a></li>
+                <li class="mdl-menu__item"><a href="{{ url('/admin/info') }}">Informations générales</a></li>
                 <li class="mdl-menu__item"><a href="{{ url('/') }}" target="_blank">Accéder au site</a></li>
             </ul>
         </div>
