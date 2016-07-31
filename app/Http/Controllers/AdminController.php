@@ -18,13 +18,11 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-         //Creating global data
+        //Creating global data
+        /*
         $data = new \stdClass();
-        
-        //Setting path to assets directories
-        $data->{'user'} = new \stdClass();   
-        $data->user->{'type'} = 'admin';
-        view()->share((array)$data);        
+        view()->share((array)$data);  
+        */      
     }
 
     /**

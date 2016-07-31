@@ -25,9 +25,16 @@ class Authenticate
             }
         }
 
-        if(Auth::user()->name=='admin'){
-            return redirect('/super-admin'); 
+        //Creating access data
+        $data = new \stdClass();        
+        $data->{'user'} = new \stdClass();   
+
+        if(Auth::user()->name=='admin'){            
+            $data->user->{'type'} = 'super';
+        }else{
+            $data->user->{'type'} = 'admin';
         }
+        view()->share((array)$data);  
 
         return $next($request);
     }

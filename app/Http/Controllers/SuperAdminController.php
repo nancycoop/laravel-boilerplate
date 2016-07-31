@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Request;
 
-class SuperAdminController extends Controller
+class SuperAdminController extends AdminController
 {
     /**
      * Create a new controller instance.
@@ -14,15 +14,11 @@ class SuperAdminController extends Controller
      */
     public function __construct()
     {
-
-        
         //Creating global data
+        /*
         $data = new \stdClass();
-        
-        //Setting path to assets directories
-        $data->{'user'} = new \stdClass();   
-        $data->user->{'type'} = 'super';
-        view()->share((array)$data);     
+        view()->share((array)$data);  
+        */   
     }
 
     /**
